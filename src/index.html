@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template - DiscordBot</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a class="Dashboard" href="?CommingSoon">Dashboard</a></li>
+      <li><a class="JoinDiscord" href="">Join Discord</a></li>
+    </ul>
+  </nav>
+  <div class="lading-content">
+    <h1>Template - DiscordBot</h1>
+    <a href="https://discord.com/oauth2/authorize?client_id=typingid&scope=bot&permissions=8" target="_blank"><button
+        class="button">Invite Bot</button></a>
+  </div>
+  <div class="lang-change">
+    <div class="langWrap">
+      <a class="lang-EN" href="#" language="EN">ENGLISH</a>
+      <a class="lang-VN" href="#" language="VN">VIETNAMESE</a>
+    </div>
+  </div>
+
+  <script>
+
+    const langEN = document.querySelector('.langWrap');
+    const link = document.querySelectorAll('a');
+    const DashboardEN = document.querySelector('.Dashboard');
+    const JoinDiscordEN = document.querySelector('.JoinDiscord');
+    const InviteBotEN = document.querySelector('.button');
+    const EN = document.querySelector('.lang-EN');
+    const VN = document.querySelector('.lang-VN');
+
+    link.forEach(el => {
+      el.addEventListener('click', () => {
+        const attr = el.getAttribute('language');
+
+        DashboardEN.textContent = data[attr].Dashboard;
+        JoinDiscordEN.textContent = data[attr].Join_Discord;
+        InviteBotEN.textContent = data[attr].Invite_Bot;
+        EN.textContent = data[attr].EN;
+        VN.textContent = data[attr].VN;
+      })
+    })
+
+    var data = {
+      "EN": {
+        "Dashboard": "Dashboard",
+        "Join_Discord": "Join Discord",
+        "Invite_Bot": "Invite Bot",
+        "EN": "ENGLISH",
+        "VN": "VIETNAMESE",
+        "JP": "JAPAN"
+      },
+      "VN": {
+        "Dashboard": "Bảng Điều Khiển",
+        "Join_Discord": "Tham Gia Discord",
+        "Invite_Bot": "Mời Bot",
+        "EN": "Tiếng Anh",
+        "VN": "Tiếng Việt",
+        "JP": "Tiếng Nhật"
+      },
+    };
+  </script>
+</body>
+
+</html>
